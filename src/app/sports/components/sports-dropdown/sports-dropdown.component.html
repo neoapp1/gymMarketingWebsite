@@ -1,0 +1,48 @@
+<div class="relative">
+  <button
+    class="inline-flex subtitle items-center justify-center text-white bg-[#ef8354] px-4 py-2 rounded-lg focus:outline-none"
+    aria-haspopup="true"
+    aria-expanded="false"
+    (click)="isOpen = !isOpen"
+  >
+    Apps by Sport
+    <svg
+      class="ml-2 w-5 h-5"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"
+      />
+    </svg>
+  </button>
+
+  <div
+    *ngIf="isOpen"
+    class="absolute right-0 z-10 w-44 dropdown-menu bg-white rounded-md shadow-lg max-h-80 md:max-h-fit overflow-y-scroll"
+  >
+    <ul class="py-1">
+      <ng-container *ngFor="let sport of sports">
+        <li>
+          <a
+            [routerLink]="['/sports', sport.route]"
+            class="flex items-center paragraph px-4 py-2 text-sm"
+          >
+            <div class="flex items-center">
+              <i
+                class="fa-solid fa-{{ sport.icon }} mr-3 text-lg"
+                style="color: #ff9f6b"
+              ></i>
+              <span class="text-white">{{ sport.name }}</span>
+            </div>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

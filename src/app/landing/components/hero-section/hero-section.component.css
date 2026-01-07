@@ -1,0 +1,39 @@
+/* CSS para móviles */
+@media (max-width: 1023px) {
+  .mobile-img {
+    position: absolute;
+    top: 100px; /* Ajusta la distancia desde la parte superior */
+    left: -100px; /* Ajusta la distancia desde el lado derecho */
+    width: 300px;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  border-right: 2px solid #ff9f6b; /* Línea del cursor */
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el texto que no se ha "escrito" aún */
+  animation: typing 4s steps(30, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Animación de tipeo */
+@keyframes typing {
+  0% {
+    width: 0; /* Comienza sin texto */
+  }
+  100% {
+    width: 100%; /* Completo */
+  }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent; /* Sin borde */
+  }
+  50% {
+    border-color: #ff9f6b; /* Muestra el borde */
+  }
+}

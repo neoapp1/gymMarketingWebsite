@@ -1,0 +1,39 @@
+.dropdown-menu {
+  background: rgba(70, 79, 100, 0.7); /* Fondo semitransparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+  padding: 1rem; /* Añade un padding para espaciar el contenido */
+  transition: opacity 0.3s ease; /* Transición suave en la aparición */
+}
+
+.dropdown-menu ul li a {
+  position: relative;
+  color: #333; /* Color del texto */
+  display: block;
+  padding: 8px 0; /* Espaciado para los elementos del dropdown */
+  transition: color 0.2s ease; /* Transición suave para el color */
+}
+
+.dropdown-menu ul li a::after {
+  content: ""; /* Agregar un elemento pseudo ::after */
+  position: absolute;
+  bottom: -2px; /* Ajusta la posición vertical de la línea */
+  left: 0;
+  right: 0;
+  height: 2px; /* Altura de la línea de subrayado */
+  background-color: #ff9f6b; /* Color de la línea de subrayado */
+  transform: scaleX(0); /* Inicialmente, la línea de subrayado no es visible */
+  transform-origin: right; /* La animación empieza desde la derecha */
+  transition: transform 0.3s ease; /* Transición para la línea */
+}
+
+.dropdown-menu ul li a:hover {
+  color: #ff9f6b; /* Cambia el color del texto al hacer hover */
+}
+
+/* Estilo para el subrayado al hacer hover */
+.dropdown-menu ul li a:hover::after {
+  transform: scaleX(1); /* Aparece la línea de subrayado al hacer hover */
+  transform-origin: left; /* La línea aparece desde la izquierda */
+}

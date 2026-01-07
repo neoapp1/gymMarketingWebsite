@@ -1,0 +1,39 @@
+/* Estilo base para los enlaces del navbar */
+.nav-link {
+  position: relative; /* Permite que el ::after sea relativo a este elemento */
+  display: block; /* Asegura que el ::after tenga el ancho del elemento */
+  padding: 8px 12px; /* Ajusta el padding según el diseño */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Estilo para el enlace activo */
+.active-link {
+  color: #ff9f6b; /* Cambia el color del texto del enlace activo */
+}
+
+/* Estilo para la línea de subrayado */
+.nav-link::after {
+  content: ""; /* Agregar un elemento pseudo ::after */
+  position: absolute;
+  bottom: -2px; /* Ajusta la posición vertical de la línea */
+  left: 0;
+  right: 0;
+  height: 2px; /* Altura de la línea de subrayado */
+  background-color: #ff9f6b; /* Color de la línea de subrayado */
+  transform: scaleX(0); /* Inicialmente, la línea de subrayado no es visible */
+  transform-origin: right; /* Origen de transformación desde la izquierda */
+  transition: transform 0.3s ease; /* Transición para la aparición de la línea */
+}
+.nav-link:hover {
+  color: #ff9f6b; /* Cambia el color del texto al hacer hover */
+}
+
+/* Estilo para el subrayado al hacer hover */
+.nav-link:hover::after {
+  transform: scaleX(1); /* Aparece la línea de subrayado al hacer hover */
+  transform-origin: left; /* Aparición desde la derecha */
+}
+
+nav {
+  z-index: 50; /* Ajusta según sea necesario */
+}

@@ -1,0 +1,8 @@
+.global-container {
+  max-width: 1200px; /* Ajusta según tu diseño */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 20px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column; /* Asegúrate de que los hijos se apilen verticalmente */
+  gap: 20px; /* Espacio entre los elementos hijos */
+}

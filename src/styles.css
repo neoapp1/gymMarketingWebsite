@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clase para el título principal */
+.title {
+  font-family: "Montserrat", sans-serif; /* Fuente Montserrat */
+  font-weight: 700; /* Negrita */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.title-1 {
+  font-family: "Montserrat", sans-serif; /* Fuente Montserrat */
+  font-weight: 700; /* Negrita */
+}
+
+/* Clase para el subtítulo */
+.subtitle {
+  font-family: "Montserrat", sans-serif; /* Fuente Montserrat */
+  font-weight: 600; /* Seminegrita */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+/* Clase para el párrafo */
+.paragraph {
+  font-family: "Montserrat", sans-serif; /* Fuente Montserrat */
+  font-weight: 400; /* Normal */
+  line-height: 1.5; /* Espaciado entre líneas */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.btn {
+  font-family: "Montserrat", sans-serif; /* Fuente Montserrat */
+  padding: 0.75rem 1.5rem; /* Espaciado interno */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  display: inline-flex; /* Para alinear íconos */
+  align-items: center; /* Alinear texto e íconos verticalmente */
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

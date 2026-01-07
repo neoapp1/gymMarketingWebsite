@@ -1,0 +1,114 @@
+<div class="contact-container relative">
+  <div class="flex flex-col gap-2">
+    <h1
+      class="title text-3xl md:text-7xl text-white remove-overlay text-center mt-6 md:mt-20"
+    >
+      Get in <span class="text-[#ff9f6b]">Touch</span> with Us
+    </h1>
+
+    <div class="text-center remove-overlay flex flex-col items-center">
+      <p class="text-white text-md md:text-xl paragraph max-w-md mb-4 md:mb-6">
+        Have questions? We're here to help! Reach out to us anytime.
+      </p>
+
+      <div class="flex flex-col justify-center items-center gap-8 md:gap-16">
+        <!-- Formulario -->
+        <form
+          (submit)="sendEmail($event)"
+          class="flex flex-col items-center w-full md:w-1/2"
+        >
+          <!-- Input for Name -->
+          <div class="relative w-80 mb-4">
+            <i class="fas fa-user absolute left-3 top-3 text-[#ff9f6b]"></i>
+            <input
+              type="text"
+              placeholder="Name"
+              [(ngModel)]="formData.name"
+              name="name"
+              class="w-full p-3 pl-10 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ff9f6b] transition-all duration-300"
+              required
+            />
+          </div>
+
+          <!-- Input for Email -->
+          <div class="relative w-80 mb-4">
+            <i class="fas fa-envelope absolute left-3 top-3 text-[#ff9f6b]"></i>
+            <input
+              type="email"
+              placeholder="Email"
+              [(ngModel)]="formData.email"
+              name="email"
+              class="w-full p-3 pl-10 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ff9f6b] transition-all duration-300"
+              required
+            />
+          </div>
+
+          <!-- Textarea for Message -->
+          <div class="relative w-80 mb-4">
+            <i
+              class="fas fa-comment-dots absolute left-3 top-3 text-[#ff9f6b]"
+            ></i>
+            <textarea
+              placeholder="What’s on your mind? We’re all ears!"
+              [(ngModel)]="formData.message"
+              name="message"
+              class="w-full p-3 pl-10 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ff9f6b] transition-all duration-300"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="inline-flex btn justify-center items-center py-3 px-5 text-base font-bold text-white bg-[#ef8354] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out"
+          >
+            Send Message
+            <svg
+              class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </button>
+        </form>
+
+        <!-- Datos de contacto para mobile -->
+        <div
+          class="contact-info w-fullflex flex-col paragraph justify-center items-start text-white text-left p-4 bg-[#171b24] rounded-lg"
+        >
+          <h2 class="text-xl font-bold mb-4 title">Contact Information</h2>
+
+          <div class="flex items-center mb-3">
+            <i class="fas fa-envelope text-[#ff9f6b] mr-3"></i>
+            <span>{{ firstEmail }}</span>
+          </div>
+
+          <div class="flex items-center mb-3">
+            <i class="fas fa-phone text-[#ff9f6b] mr-3"></i>
+            <span>+357 2403 0316</span>
+          </div>
+
+          <div class="flex items-center mb-3">
+            <i class="fas fa-map-marker-alt text-[#ff9f6b] mr-3"></i>
+            <span
+              >NEO APP INTERNATIONAL, LTD Soho Embassy - Omonoias 13, Limassol
+              3052, Cyprus
+            </span>
+          </div>
+        </div>
+
+        <!-- Datos de contacto para desktop -->
+      </div>
+    </div>
+  </div>
+</div>

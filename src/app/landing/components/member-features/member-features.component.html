@@ -1,0 +1,37 @@
+<div
+  class="admin-features-container flex flex-col items-center justify-center py-12"
+>
+  <!-- Frase centrada encima de todo -->
+  <p
+    class="text-white md:text-4xl text-2xl paragraph md:max-w-2xl max-w-xs leading-tight text-center mb-10 animate-fadeIn"
+  >
+    <span class="text-[#ff9f6b]">Enjoy a streamlined</span>, experience designed
+    with your convenience in mind.
+  </p>
+
+  <!-- Grid de tarjetas -->
+  <div
+    class="features-list flex flex-col items-center md:flex-row justify-center gap-6 md:gap-10 max-w-screen-xl w-full p-10"
+  >
+    <div
+      *ngFor="let feature of features"
+      class="card hover:shadow-xl transition-shadow duration-200"
+      (mouseenter)="onFeatureHover(feature.id)"
+      (mouseleave)="onFeatureHover(null)"
+    >
+      <div class="content">
+        <div class="back">
+          <div
+            class="back-content flex flex-col items-center justify-center text-center"
+          >
+            <i [class]="feature.icon + ' text-[#ff9f6b] text-3xl'"></i>
+            <span class="text-white subtitle text-sm mt-2 p-2">{{
+              feature.name
+            }}</span>
+            <!-- <div class="text-gray-400 text-sm">Hover for more info</div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

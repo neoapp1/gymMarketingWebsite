@@ -1,0 +1,63 @@
+<div
+  class="admin-features-container flex flex-col items-center justify-center py-12 relative"
+>
+  <!-- Imagen de fondo -->
+  <div
+    [ngStyle]="{
+      'background-image': 'url(../../../assets/background/bg2.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }"
+    class="absolute inset-0"
+  ></div>
+
+  <!-- Overlay para oscurecer el fondo -->
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-20"></div>
+  <!-- Ajustar la opacidad y el z-index aquí -->
+
+  <!-- Frase centrada encima de todo -->
+  <p
+    class="text-white text-3xl sm:text-2xl md:text-4xl paragraph md:max-w-xl max-w-xs leading-tight text-center sm:mb-10 mt-20 relative z-30"
+  >
+    <span class="text-[#ff9f6b]">Leave the logistics </span> to us, and
+    concentrate on what truly matters.
+  </p>
+
+  <!-- Grid de características -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-screen-xl w-full p-20 relative z-30"
+  >
+    <!-- Columna de la lista de características -->
+    <div class="features-list relative space-y-6">
+      <ul class="list-none relative z-30">
+        <div
+          class="absolute -left-14 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#ff9f6b] to-[#fff0]"
+        ></div>
+        <li
+          *ngFor="let feature of features"
+          class="flex text-gray-500 space-x-4 cursor-pointer transition-colors duration-200 hover:text-white"
+          [ngClass]="{ 'text-white': selectedFeature === feature.id }"
+          (mouseenter)="onFeatureHover(feature.id)"
+        >
+          <div class="flex gap-3 mt-2 items-baseline">
+            <i [class]="feature.icon" class="text-[#ff9f6b] text-2xl mr-2"></i>
+            <span class="paragraph">{{ feature.name }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna de imágenes correspondientes -->
+    <div class="features-image-container relative z-30">
+      <ng-container *ngFor="let feature of features">
+        <img
+          *ngIf="selectedFeature === feature.id"
+          [src]="feature.imgSrc"
+          [alt]="feature.name"
+          class="absolute inset-0 w-full h-auto feature-image"
+          [ngClass]="{ pulse: selectedFeature === feature.id }"
+        />
+      </ng-container>
+    </div>
+  </div>
+</div>

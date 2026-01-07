@@ -1,0 +1,64 @@
+<div class="services-container">
+  <div class="flex flex-col gap-2">
+    <h1 class="title text-7xl text-white remove-overlay text-center mt-20">
+      Our <span class="text-[#ff9f6b]">Services</span>
+    </h1>
+
+    <div class="text-center remove-overlay flex flex-col items-center">
+      <p class="text-white text-xl paragraph">
+        Ready to take the next step? Schedule a demo today!
+      </p>
+
+      <a
+        (click)="openModal()"
+        class="inline-flex btn justify-center items-center py-3 px-5 text-base font-bold text-white bg-[#ef8354] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out"
+      >
+        Schedule a Demo
+        <svg
+          class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 14 10"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 5h12m0 0L9 1m4 4L9 9"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="services-list">
+    <!-- Iterar sobre las categorías -->
+    <div *ngFor="let service of services" class="mt-10">
+      <div class="cards-container">
+        <div *ngFor="let item of service.items" class="card">
+          <div class="content">
+            <!-- Frente de la tarjeta -->
+            <div class="front flex flex-col">
+              <i class="icon {{ item.icon }}"></i>
+              <h3 class="title">{{ item.name }}</h3>
+              <p class="paragraph">{{ item.description }}</p>
+            </div>
+            <!-- Respaldo de la tarjeta -->
+            <div class="back">
+              <div class="back-content">
+                <ul class="benefits-list">
+                  <li *ngFor="let benefit of item.benefits">
+                    <i class="fas fa-check-circle text-[#ff9f6b] mr-2"></i>
+                    <span class="paragraph">{{ benefit }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

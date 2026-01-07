@@ -1,0 +1,79 @@
+<div class="mt-20">
+  <div class="relative flex flex-col lg:flex-row gap-5 justify-items-center">
+    <!-- Sección izquierda para NeoApp -->
+    <div class="max-w-screen-xl mx-auto lg:max-w-2xl">
+      <section class="flex-1 p-5 lg:p-10">
+        <div class="text-left">
+          <h1
+            class="mb-6 text-3xl title font-extrabold tracking-tight leading-snug text-white md:text-4xl lg:text-5xl dark:text-white"
+          >
+            Where <span class="text-[#ff9f6b]">Strategy</span> Meets Success
+          </h1>
+          <span
+            class="mb-4 text-xl flex justify-start items-center font-semibold tracking-tight leading-normal text-[#2d3142] dark:text-white"
+          >
+            <span class="text-[#ff9f6b] subtitle typing-animation"
+              >The New Game Changer.</span
+            >
+          </span>
+
+          <p
+            class="mb-8 text-lg paragraph font-normal text-gray-300 lg:text-xl dark:text-gray-400"
+          >
+            Discover how NeoApp revolutionizes sports management through
+            cutting-edge technology. Maximize your team's potential with our
+            seamless solutions.
+          </p>
+          <div
+            class="flex flex-col space-y-4 sm:flex-row sm:justify-left sm:space-y-0"
+          >
+            <a
+              (click)="openModal()"
+              class="inline-flex btn justify-center items-center py-3 px-5 text-base font-bold text-white bg-[#ef8354] rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out"
+            >
+              Schedule a Demo
+              <svg
+                class="w-3.5 h-3.5 ms-2 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                />
+              </svg>
+            </a>
+            <a
+              [routerLink]="['/contact-us']"
+              class="py-3 btn px-5 sm:ms-4 text-sm font-bold text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-[#ef8354] focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-70"
+            >
+              Get Started
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div
+      class="relative flex justify-center lg:block transition-transform duration-300 hover:scale-110 animate-scale"
+    >
+      <!-- Fondo neón difuminado -->
+
+      <img
+        src="../../../../assets/desktop/pc-mockup.png"
+        alt="Mockup de desktop"
+        class="w-full max-w-[2000px] h-auto z-10"
+      />
+      <img
+        src="../../../../assets/mobile/mobilemockup-1.png"
+        alt="Mockup de celular"
+        class="mobile-img absolute top-36 right-0 lg:-right-52 w-[400px] lg:w-[500px] h-auto z-10"
+      />
+    </div>
+  </div>
+</div>

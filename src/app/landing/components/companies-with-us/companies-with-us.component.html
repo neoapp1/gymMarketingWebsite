@@ -1,0 +1,11 @@
+<div class="bg-[#ff9f6b]">
+  <div class="wrapper">
+    <div
+      class="item"
+      *ngFor="let company of companiesLogo; let i = index"
+      [ngClass]="'item' + (i + 1)"
+    >
+      <img [src]="company.img" />
+    </div>
+  </div>
+</div>
