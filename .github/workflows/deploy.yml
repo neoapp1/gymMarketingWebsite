@@ -1,0 +1,37 @@
+name: Deploy Angular to Verpex
+
+on:
+  push:
+    branches:
+      - main # cambia si tu rama principal no es main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Angular
+        run: npm run build
+
+      - name: Deploy to Verpex via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          protocol: ftps
+          local-dir: dist/neoapp-website/ # <- CAMBIA esto
+          server-dir: ${{ secrets.FTP_TARGET }}/
+          dangerous-clean-slate: true
